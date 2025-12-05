@@ -6,10 +6,22 @@ import java.util.List;
  * Producer reads from a source container and puts items into the shared queue.
  */
 public class Producer implements Runnable {
+    /** Source list containing data to be produced */
     private final List<Integer> source;
+
+    /** Shared blocking queue where items are produced */
     private final BoundedBlockingQueue<Integer> queue;
+
+    /** Special termination signal value */
     private final int poisonPill;
 
+    /**
+     * Creates a Producer instance.
+     *
+     * @param source     list of values to be produced
+     * @param queue      shared blocking queue
+     * @param poisonPill termination signal for consumer
+     */
     public Producer(List<Integer> source,
                     BoundedBlockingQueue<Integer> queue,
                     int poisonPill
@@ -19,6 +31,9 @@ public class Producer implements Runnable {
         this.poisonPill = poisonPill;
     }
 
+    /**
+     * Iterates over the source list and pushes each item into the queue.
+     */
     @Override
     public void run() {
         try {
