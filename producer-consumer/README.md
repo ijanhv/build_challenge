@@ -2,7 +2,7 @@
 
 A thread-safe implementation of the classic producer-consumer pattern in Java, demonstrating concurrent programming concepts including thread synchronization, blocking queues, and wait/notify mechanisms.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
@@ -14,7 +14,7 @@ A thread-safe implementation of the classic producer-consumer pattern in Java, d
 - [Implementation Details](#implementation-details)
 - [License](#license)
 
-## 🎯 Overview
+## Overview
 
 This project implements a multi-threaded producer-consumer pattern where:
 - A **Producer** thread reads integers from a source list and places them into a shared bounded blocking queue
@@ -22,7 +22,7 @@ This project implements a multi-threaded producer-consumer pattern where:
 - Thread synchronization ensures safe concurrent access to shared resources
 - A "poison pill" pattern signals graceful shutdown
 
-## ✨ Features
+## Features
 
 - **Thread-Safe Bounded Blocking Queue**: Custom implementation using `wait()` and `notifyAll()`
 - **Configurable Capacity**: Set queue size to control buffer limits
@@ -30,7 +30,7 @@ This project implements a multi-threaded producer-consumer pattern where:
 - **Comprehensive Logging**: Console output tracking production and consumption
 - **Concurrent Data Transfer**: Simulates realistic concurrent processing scenarios
 
-## 🏗️ Architecture
+##  Architecture
 
 ### Core Components
 
@@ -66,7 +66,7 @@ com.janhavi.challenge.producerconsumer/
 └───────────┘ └──────────┘
 ```
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 ### Prerequisites
 
@@ -143,7 +143,7 @@ System.out.println("Final Destination: " + destination);
 | `poisonPill` | Termination signal value | -1 |
 | `source` | Input data list | [1..10] |
 
-## 📊 Sample Output
+## Sample Output
 
 ```
 ProducerThread produced 1
@@ -172,7 +172,7 @@ ProducerThread produced -1
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
-## 🧪 Testing
+## Testing
 
 ### Unit Test Structure
 
@@ -207,7 +207,7 @@ mvn test
 gradle test
 ```
 
-## 🔧 Implementation Details
+## Implementation Details
 
 ### Thread Synchronization
 
@@ -241,23 +241,23 @@ A sentinel value (-1) signals the consumer to stop processing:
 - No race conditions on shared data structures
 - Proper happens-before relationships established
 
-## 📈 Performance Considerations
+## Performance Considerations
 
 - **Queue Capacity**: Smaller capacity increases blocking frequency
 - **Processing Time**: Consumer sleep (80ms) is slower than producer (50ms)
 - **Scalability**: Pattern supports multiple producers/consumers with minor modifications
 
-## 🎓 Learning Objectives
+## Learning Objectives
 
 This implementation demonstrates:
-- ✅ Thread synchronization using synchronized blocks
-- ✅ Inter-thread communication via wait/notify
-- ✅ Bounded blocking queue design pattern
-- ✅ Producer-consumer coordination
-- ✅ Graceful thread termination strategies
-- ✅ Concurrent data structure implementation
+- Thread synchronization using synchronized blocks
+- Inter-thread communication via wait/notify
+- Bounded blocking queue design pattern
+- Producer-consumer coordination
+- Graceful thread termination strategies
+- Concurrent data structure implementation
 
-## 📝 Future Enhancements
+## Future Enhancements
 
 - Add support for multiple producers and consumers
 - Implement timeout mechanisms for put/take operations
@@ -268,5 +268,5 @@ This implementation demonstrates:
 ---
 
 **Author**: Janhavi  
-**Repository**: [https://github.com/yourusername/producer-consumer-pattern](https://github.com/yourusername/producer-consumer-pattern)  
+**Repository**: [https://github.com/ijanhv/build_challenge](https://github.com/ijanhv//build_challenge)  
 **Last Updated**: December 2025

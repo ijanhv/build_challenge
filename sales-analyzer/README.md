@@ -2,7 +2,7 @@
 
 A comprehensive Java application demonstrating functional programming and Stream API operations for analyzing sales data from CSV files. This project showcases data aggregation, grouping, filtering, and statistical analysis using lambda expressions and modern Java paradigms.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
@@ -14,7 +14,7 @@ A comprehensive Java application demonstrating functional programming and Stream
 - [Testing](#testing)
 - [Technical Details](#technical-details)
 
-## 🎯 Overview
+## Overview
 
 This application processes sales transaction data from CSV files and performs various analytical operations using Java Streams API. It demonstrates proficiency in:
 - Functional programming paradigms
@@ -23,7 +23,7 @@ This application processes sales transaction data from CSV files and performs va
 - Lambda expressions and method references
 - Statistical computations
 
-## ✨ Features
+## Features
 
 - **CSV Data Import**: Robust parsing of sales data from CSV files
 - **Multiple Analysis Methods**: 8+ different analytical queries on sales data
@@ -34,7 +34,7 @@ This application processes sales transaction data from CSV files and performs va
 - **Geographic Grouping**: Regional and country-based aggregations
 - **Type Safety**: Immutable data models with strong typing
 
-## 🏗️ Architecture
+## Architecture
 
 ### Project Structure
 
@@ -56,7 +56,7 @@ CSV File → SalesDataLoader → List<SalesRecord> → SalesAnalyzer → Analysi
            Stream Pipeline      Functional Ops    Aggregated Data
 ```
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 ### Prerequisites
 
@@ -92,7 +92,7 @@ CSV File → SalesDataLoader → List<SalesRecord> → SalesAnalyzer → Analysi
     - Place `sales-sample.csv` in the project root or a known location
     - Ensure CSV follows the expected format (see Data Format section)
 
-## 💻 Usage
+##  Usage
 
 ### Running the Application
 
@@ -123,7 +123,7 @@ The input CSV must have the following columns:
 | Middle East and North Africa | Libya | Cosmetics | Offline | M | 10/18/2014 | 686800706 | 10/31/2014 | 8446 | 437.20 | 263.33 | 3692591.20 | 2224085.18 | 1468506.02 |
 
 
-## 📊 Analysis Operations
+## Analysis Operations
 
 ### 1. Total Revenue
 Calculates sum of all revenue across all transactions.
@@ -163,8 +163,29 @@ public Map<String, Double> revenueByRegion() {
 ### 4. Profit by Region
 Aggregates profit data by region.
 
+```java
+public Map<String, Double> profitByRegion() {
+        return records.stream()
+                .collect(Collectors.groupingBy(
+                        SalesRecord::getRegion,
+                        Collectors.summingDouble(SalesRecord::getTotalProfit)
+                ));
+    }
+
+```
 ### 5. Revenue by Item Type
 Analyzes which product categories generate most revenue.
+
+```java
+    public Map<String, Double> revenueByItemType() {
+        return records.stream()
+                .collect(Collectors.groupingBy(
+                        SalesRecord::getItemType,
+                        Collectors.summingDouble(SalesRecord::getTotalRevenue)
+                ));
+    }
+```
+
 
 ### 6. Units Sold by Country
 Tracks sales volume per country.
@@ -215,7 +236,7 @@ public DoubleSummaryStatistics revenueStatistics() {
 }
 ```
 
-## 📈 Sample Output
+## Sample Output
 
 ```
 === SALES ANALYSIS REPORT ===
@@ -334,7 +355,7 @@ All tests use JUnit 5 assertions with appropriate delta values for floating-poin
 assertEquals(expected, actual, 0.01);  // 2 decimal precision
 ```
 
-## 🔧 Technical Details
+## Technical Details
 
 ### Functional Programming Concepts
 
@@ -373,16 +394,7 @@ Advanced collector usage:
 - `Collectors.summingInt()` - Integer summation
 - Custom downstream collectors
 
-### Immutability
-
-`SalesRecord` is immutable:
-- All fields are `final`
-- No setters provided
-- Thread-safe by design
-- Supports functional programming
-
-
-## 📚 Learning Objectives
+## Learning Objectives
 
 This project demonstrates:
 
@@ -395,7 +407,7 @@ This project demonstrates:
 ✅ **Unit Testing**: JUnit 5, test-driven development  
 ✅ **Clean Code**: Separation of concerns, single responsibility
 
-## 🚀 Future Enhancements
+## Future Enhancements
 
 - Support for multiple CSV files (batch processing)
 - Export analysis results to JSON/Excel
@@ -406,7 +418,7 @@ This project demonstrates:
 - Visualization with charts/graphs
 - Performance benchmarking for different dataset sizes
 
-## 📝 Best Practices Demonstrated
+## Best Practices Demonstrated
 
 1. **Separation of Concerns**: Loader, Analyzer, Model in separate classes
 2. **Immutability**: Immutable data models prevent bugs
@@ -419,5 +431,5 @@ This project demonstrates:
 ---
 
 **Author**: Janhavi  
-**Repository**: [https://github.com/yourusername/sales-data-analysis](https://github.com/yourusername/sales-data-analysis)  
+**Repository**: [https://github.com/ijanhv/build_challenge](https://github.com/ijanhv/build_challenge)  
 **Last Updated**: December 2025  
