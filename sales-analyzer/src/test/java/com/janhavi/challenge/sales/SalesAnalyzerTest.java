@@ -111,6 +111,8 @@ class SalesAnalyzerTest {
         assertEquals(3, stats.getCount());
         assertEquals(464953.08, stats.getMin(), 0.01);
         assertEquals(3692591.20, stats.getMax(), 0.01);
-        assertEquals(4830879.68, stats.getSum(), 0.01);
+        assertEquals(1613626.5599999998, stats.getAverage(), 0.01);
+        assertEquals(4840879.68, stats.getSum(), 0.01);
+
     }
 }
