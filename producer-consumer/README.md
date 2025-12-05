@@ -265,13 +265,6 @@ This implementation demonstrates:
 - Add metrics collection (throughput, latency)
 - Implement priority queue variant
 
-
-## 🙏 Acknowledgments
-
-- Classic producer-consumer pattern from concurrent programming literature
-- Java concurrency utilities and best practices
-- Thread synchronization patterns from "Java Concurrency in Practice"
-
 ---
 
 **Author**: Janhavi  
