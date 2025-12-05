@@ -16,8 +16,8 @@ public class ProducerConsumerApp {
 
         BoundedBlockingQueue<Integer> queue = new BoundedBlockingQueue<>(capacity);
 
-        Thread producerThread = new Thread(new Producer(source, queue, poisonPill), "ProducerThread");
-        Thread consumerThread = new Thread(new Consumer(queue, destination, poisonPill), "ConsumerThread");
+        Thread producerThread = new Thread(new Producer(source, queue, poisonPill), "Producer");
+        Thread consumerThread = new Thread(new Consumer(queue, destination, poisonPill), "Consumer");
 
         producerThread.start();
         consumerThread.start();

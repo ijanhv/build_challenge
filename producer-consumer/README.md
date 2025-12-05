@@ -12,7 +12,6 @@ A thread-safe implementation of the classic producer-consumer pattern in Java, d
 - [Sample Output](#sample-output)
 - [Testing](#testing)
 - [Implementation Details](#implementation-details)
-- [License](#license)
 
 ## Overview
 
@@ -98,7 +97,7 @@ com.janhavi.challenge.producerconsumer/
 2. Ensure source folder is set to `src/`
 3. Run `ProducerConsumerApp.java`
 
-## 💻 Usage
+## Usage
 
 ### Basic Example
 
@@ -146,30 +145,32 @@ System.out.println("Final Destination: " + destination);
 ## Sample Output
 
 ```
-ProducerThread produced 1
-ProducerThread produced 2
-[Consumer] Consumed: 1
-ProducerThread produced 3
-[Consumer] Consumed: 2
-ProducerThread produced 4
-[Consumer] Consumed: 3
-ProducerThread produced 5
-[Consumer] Consumed: 4
-ProducerThread produced 6
-[Consumer] Consumed: 5
-ProducerThread produced 7
-[Consumer] Consumed: 6
-ProducerThread produced 8
-[Consumer] Consumed: 7
-ProducerThread produced 9
-[Consumer] Consumed: 8
-ProducerThread produced 10
-[Consumer] Consumed: 9
-ProducerThread produced -1
-[Consumer] Consumed: 10
-[Consumer] Received poison pill. Stopping.
+Producer Produced 1
+Consumer Consumed: 1
+Producer Produced 2
+Consumer Consumed: 2
+Producer Produced 3
+Producer Produced 4
+Consumer Consumed: 3
+Producer Produced 5
+Consumer Consumed: 4
+Producer Produced 6
+Producer Produced 7
+Consumer Consumed: 5
+Producer Produced 8
+Consumer Consumed: 6
+Producer Produced 9
+Producer Produced 10
+Consumer Consumed: 7
+Consumer Consumed: 8
+Producer Produced -1
+Consumer Consumed: 9
+Consumer Consumed: 10
+Consumer Received poison pill. Stopping.
 === Final Destination Content ===
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
 ```
 
 ## Testing

@@ -309,7 +309,7 @@ Average: 1327321.84033
 Sum: 1.32732184033E9
 ```
 
-## 🧪 Testing
+## Testing
 
 ### Test Coverage
 

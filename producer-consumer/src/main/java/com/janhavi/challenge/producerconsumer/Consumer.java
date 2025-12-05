@@ -40,16 +40,16 @@ public class Consumer implements Runnable {
             while (true) {
                 Integer value = queue.take();
                 if (value == poisonPill) {
-                    System.out.println("[Consumer] Received poison pill. Stopping.");
+                    System.out.println(Thread.currentThread().getName() + " Received poison pill. Stopping.");
                     break;
                 }
                 destination.add(value);
-                System.out.println("[Consumer] Consumed: " + value);
+                System.out.println(Thread.currentThread().getName() +" Consumed: " + value);
                 Thread.sleep(80); // simulate work
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            System.err.println("[Consumer] Interrupted");
+            System.out.println(Thread.currentThread().getName() + " Interrupted");
         }
     }
 }

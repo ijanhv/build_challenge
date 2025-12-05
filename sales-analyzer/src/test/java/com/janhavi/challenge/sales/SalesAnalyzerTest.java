@@ -15,6 +15,10 @@ class SalesAnalyzerTest {
     private List<SalesRecord> sampleData;
     private SalesAnalyzer analyzer;
 
+    /**
+     * Initializes sample test data before each test case.
+     * Ensures clean and consistent test setup.
+     */
     @BeforeEach
     void setup() {
         sampleData = List.of(
@@ -41,7 +45,11 @@ class SalesAnalyzerTest {
         analyzer = new SalesAnalyzer(sampleData);
     }
 
-    // TEST 1: Total Revenue
+    /**
+     * TEST 1:
+     * Verifies that total revenue is calculated correctly
+     * by summing revenue from all sales records.
+     */
     @Test
     void testTotalRevenue() {
         double expected =
@@ -52,7 +60,11 @@ class SalesAnalyzerTest {
         assertEquals(expected, analyzer.totalRevenue(), 0.01);
     }
 
-    // TEST 2: Total Profit
+    /**
+     * TEST 2:
+     * Verifies correct computation of total profit
+     * across all records.
+     */
     @Test
     void testTotalProfit() {
         double expected =
@@ -63,7 +75,10 @@ class SalesAnalyzerTest {
         assertEquals(expected, analyzer.totalProfit(), 0.01);
     }
 
-    // TEST 3: Revenue By Region
+    /**
+     * TEST 3:
+     * Verifies that revenue is grouped and summed correctly by region.
+     */
     @Test
     void testRevenueByRegion() {
         Map<String, Double> map = analyzer.revenueByRegion();
@@ -73,7 +88,10 @@ class SalesAnalyzerTest {
         assertEquals(683335.40, map.get("Asia"), 0.01);
     }
 
-    // TEST 4: Units Sold By Country
+    /**
+     * TEST 4:
+     * Verifies correct aggregation of units sold by country.
+     */
     @Test
     void testUnitsSoldByCountry() {
         Map<String, Integer> map = analyzer.unitsSoldByCountry();
@@ -83,7 +101,10 @@ class SalesAnalyzerTest {
         assertEquals(3322, map.get("Japan"));
     }
 
-    // TEST 5: Monthly Revenue
+    /**
+     * TEST 5:
+     * Verifies that revenue is correctly grouped by month (YearMonth).
+     */
     @Test
     void testMonthlyRevenue() {
         Map<YearMonth, Double> map = analyzer.monthlyRevenue();
@@ -93,7 +114,11 @@ class SalesAnalyzerTest {
         assertEquals(683335.40, map.get(YearMonth.of(2010, 4)), 0.01);
     }
 
-    // TEST 6: Top Profitable Order
+    /**
+     * TEST 6:
+     * Verifies that the top N most profitable orders are sorted
+     * in descending order by profit and returned correctly.
+     */
     @Test
     void testTopProfitableOrder() {
         List<SalesRecord> top = analyzer.topNProfitableOrders(1);
@@ -103,7 +128,11 @@ class SalesAnalyzerTest {
         assertEquals(1468506.02, top.get(0).getTotalProfit(), 0.01);
     }
 
-    // TEST 7: Revenue Statistics
+    /**
+     * TEST 7:
+     * Verifies correctness of revenue summary statistics:
+     * count, min, max, average, and sum.
+     */
     @Test
     void testRevenueStatistics() {
         var stats = analyzer.revenueStatistics();

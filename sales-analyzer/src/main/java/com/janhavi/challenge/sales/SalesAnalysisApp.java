@@ -4,6 +4,11 @@ import java.nio.file.Path;
 import java.time.YearMonth;
 import java.util.Map;
 
+/**
+ * Entry point for the Sales Analysis application.
+ *
+ * Expected input: Path to a valid CSV file containing sales data.</p>
+ */
 public class SalesAnalysisApp {
 
     public static void main(String[] args) throws Exception {

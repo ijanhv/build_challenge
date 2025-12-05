@@ -1,7 +1,7 @@
 package com.janhavi.challenge.producerconsumer;
 
-import java.util.ArrayList;
 import java.util.List;
+
 /**
  * Producer reads from a source container and puts items into the shared queue.
  */
@@ -33,20 +33,21 @@ public class Producer implements Runnable {
 
     /**
      * Iterates over the source list and pushes each item into the queue.
+     *
      */
     @Override
     public void run() {
         try {
             for (Integer value: source) {
                 queue.put(value);
-                System.out.println(Thread.currentThread().getName() + " produced " + value);
+                System.out.println(Thread.currentThread().getName() + " Produced " + value);
                 Thread.sleep(50);
             }
             queue.put(poisonPill);
-            System.out.println(Thread.currentThread().getName() + " produced " + poisonPill);
+            System.out.println(Thread.currentThread().getName() + " Produced " + poisonPill);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            System.out.println(Thread.currentThread().getName() + " interrupted");
+            System.out.println(Thread.currentThread().getName() + " Interrupted");
         }
     }
 

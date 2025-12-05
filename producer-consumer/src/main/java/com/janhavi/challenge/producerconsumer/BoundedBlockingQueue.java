@@ -10,10 +10,10 @@ import java.util.Queue;
  */
 public class BoundedBlockingQueue<T> {
 
-    /** Internal FIFO storage for elements */
+    // Internal FIFO storage for elements
     private final Queue<T> queue = new LinkedList<>();
 
-    /** Maximum number of elements the queue can hold */
+    // Maximum number of elements the queue can hold
     private final int capacity;
 
     /**

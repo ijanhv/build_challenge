@@ -3,8 +3,13 @@ package com.janhavi.challenge.sales;
 import java.time.LocalDate;
 import java.util.Objects;
 
+
 /**
- * Immutable model representing one row of sales data.
+ * Immutable model class representing a single row of sales data.
+ *
+ * This class serves as a Data Transfer Object (DTO) for holding
+ * parsed CSV sales information.
+ *
  */
 public class SalesRecord {
 
